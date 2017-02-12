@@ -25,7 +25,6 @@ namespace Sel_3_02
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 wait.Until(d => d.FindElement(By.ClassName("success")));
 
-                // Should see: "Cheese - Google Search" (for an English locale)
                 var textAboutLogin = driver.FindElement(By.XPath("//*[@id=\"notices\"]/div[3]")).Text;
                 if (textAboutLogin == "You are now logged in as admin")
                     Console.WriteLine(String.Format("Check text after login: {0}", textAboutLogin));
