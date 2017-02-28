@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sel-3-04", "..\Sel-3-04\Sel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sel-3-05", "..\Sel-3-05\Sel-3-05.csproj", "{EACBF83D-C1F3-4DEF-83A5-BDE84886E446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sel-3-07", "..\Sel-3-07\Sel-3-07\Sel-3-07.csproj", "{8AFC5900-7AF5-41BC-877D-98793D3D88CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sel-3-07", "..\Sel-3-07\Sel-3-07.csproj", "{8AFC5900-7AF5-41BC-877D-98793D3D88CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
