@@ -49,8 +49,27 @@ namespace Sel_3_11
 
             if (driver.FindElement(By.CssSelector(".notice.success")).Text == "Your customer account has been created.")
             {
+                Console.WriteLine("User is SignUp");
+            }
+
+            //driver.FindElement(By.CssSelector("#box-account > div > ul > li:nth-child(4) > a")).Click();
+            driver.FindElement(By.LinkText("Logout")).Click();
+
+            if (driver.FindElement(By.CssSelector(".notice.success")).Text == "You are now logged out.")
+            {
+                Console.WriteLine("User is Logout");
+            }
+
+            driver.FindElement(By.Name("email")).SendKeys(newUser.Email);
+            driver.FindElement(By.Name("password")).SendKeys(newUser.Pass);
+            driver.FindElement(By.Name("login")).Click();
+
+            if (driver.FindElement(By.CssSelector(".notice.success")).Text == String.Format("You are now logged in as {0} {1}.", newUser.FirstName, newUser.LastName))
+            {
                 Console.WriteLine("User is SignIn");
             }
+
+             
             Thread.Sleep(5000);
             driver.Quit();
         }
