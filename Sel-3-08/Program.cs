@@ -21,30 +21,31 @@ namespace Sel_3_08
         {
             ChromeDriver driver = new ChromeDriver(@"C:\web_config");
             driver.Navigate().GoToUrl("http://localhost:8082/litecart/");
-            for(int i =0; i< driver.FindElementsByCssSelector(".product.column.shadow.hover-light").Count; i++)
+            IList<IWebElement> ListProducts = driver.FindElementsByCssSelector(".product.column.shadow.hover-light");
+            for(int i =0; i< ListProducts.Count; i++)
             {
 
                 try
                 {
-                    if (driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].FindElement(By.CssSelector(".sticker")).Displayed)
+                    if (ListProducts[i].FindElement(By.CssSelector(".sticker")).Displayed)
                     {
-                        if (driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].FindElements(By.CssSelector(".sticker")).Count > 1)
+                        if (ListProducts[i].FindElements(By.CssSelector(".sticker")).Count > 1)
                         {
                             Console.WriteLine(String.Format("{0} - have more than 1 sticker", 
-                                driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].Text));
+                                ListProducts[i].Text));
                         }
                         else
                         {
                             Console.WriteLine(String.Format("{0} - have sticker {1}",
-                                driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].Text,
-                                driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].FindElement(By.CssSelector(".sticker")).Text));
+                                ListProducts[i].Text,
+                                ListProducts[i].FindElement(By.CssSelector(".sticker")).Text));
                         }
                     }
                 }
                 catch
                 {
                     Console.WriteLine(String.Format("{0} - not have sticker", 
-                        driver.FindElementsByCssSelector(".product.column.shadow.hover-light")[i].Text));
+                        ListProducts[i].Text));
                 }
             }
             Thread.Sleep(5000);
